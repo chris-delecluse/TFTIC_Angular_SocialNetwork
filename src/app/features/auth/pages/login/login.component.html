@@ -1,0 +1,5 @@
+<section class="flex justify-center items-center h-screen">
+  <app-login-form
+    [errorMessage]="errorMessage"
+    (emitLoginSubmit$)="login($event)"/>
+</section>

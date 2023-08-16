@@ -1,0 +1,10 @@
+<section class="flex flex-col justify-around items-center h-screen">
+  <div class="flex flex-col gap-3">
+    <ng-container *ngFor="let error of errors">
+      <app-form-error [errorMessage]="error"/>
+    </ng-container>
+  </div>
+
+  <app-register-form
+    (emitSubmitRegister$)="register($event)"/>
+</section>

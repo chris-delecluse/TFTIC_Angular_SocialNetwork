@@ -1,0 +1,44 @@
+<form [formGroup]="form"
+      class="bg-white bg-opacity-20 rounded-lg px-10 py-5 flex flex-col gap-4 w-96 relative
+       before:rotate-12 before:rounded-xl before:-translate-x-10 before:-translate-y-3 before:bg-white before:bg-opacity-40
+       before:w-96 before:h-full before:absolute before:-z-10">
+
+  <h2 class="text-center text-white text-3xl">{{ "login" | uppercase }}</h2>
+
+  <span class="text-red-600 absolute top-16 left-1/3">{{ errorMessage }}</span>
+
+  <div class="space-y-11 pt-20">
+    <ng-container *ngFor="let input of formInputs">
+      <div class="relative">
+      <span *ngIf="!form.controls[input.name].valid && form.controls[input.name].touched"
+            class="text-red-600 absolute -top-8 left-4">
+          {{input.errorMessage}}
+      </span>
+
+        <fa-icon [icon]="input.icon" class="text-xl absolute top-2 left-4 text-white"/>
+
+        <input [type]="input.name"
+               [placeholder]="input.placeholder"
+               [formControlName]="input.name"/>
+      </div>
+    </ng-container>
+  </div>
+
+  <a routerLink="/auth/retrieve-password" class="text-right text-blue-500">Forgot password ?</a>
+
+  <div class="mx-auto">
+    <app-ui-primary-button (click)="onSubmit()">
+      Sign-In
+    </app-ui-primary-button>
+  </div>
+
+  <p class="text-center text-white">
+    No account ? register for free
+    <span>
+      <a routerLink="/auth/register"
+         class="text-blue-500">
+        here
+      </a>
+    </span>
+  </p>
+</form>
