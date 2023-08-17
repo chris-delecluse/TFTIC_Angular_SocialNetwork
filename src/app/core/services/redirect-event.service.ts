@@ -5,13 +5,9 @@ import { BehaviorSubject, Observable, Subject } from "rxjs";
   providedIn: 'root'
 })
 export class RedirectEventService {
-  private subject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  private subject$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   emitAction = (message: string): void => {
-    this.subject.next(message);
-  }
-
-  getActionObservable = (): Observable<string> => {
-    return this.subject.asObservable();
+    this.subject$.next(message);
   }
 }

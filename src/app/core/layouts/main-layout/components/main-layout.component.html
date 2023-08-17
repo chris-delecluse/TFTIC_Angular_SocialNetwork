@@ -1,0 +1,22 @@
+<div class="grid grid-rows-[14vh,6vh,1fr,4vh] grid-cols-[1fr] h-screen gap-5 p-3
+            sm:grid-rows-[7vh,6vh,1fr,4vh] md:grid-cols-[25vw,1fr]
+            lg:grid-cols-[20vw,1fr,20vw]
+            xl:grid-cols-[15vw,1fr,15vw]">
+
+  <app-header class="bg-white bg-opacity-10 rounded-lg
+                    md:col-start-1 col-span-full"/>
+
+  <app-friend-list class="bg-white bg-opacity-10 rounded-lg
+                          md:col-start-1 md:col-end-1 md:row-start-2 md:row-end-4"/>
+
+  <main class="bg-white bg-opacity-10 rounded-lg
+              md:col-start-2 md:row-start-2 md:row-end-4">
+    <router-outlet/>
+  </main>
+
+  <app-notifications class="bg-white bg-opacity-10 rounded-lg hidden
+                          lg:col-start-3 lg:col-end-3 lg:row-start-2 md:row-end-4 lg:block"/>
+
+  <app-footer class="bg-white bg-opacity-10 rounded-lg
+                    md:row-start-4 md:col-span-full"/>
+</div>
