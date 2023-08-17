@@ -12,6 +12,9 @@ module.exports = {
       },
       inset: {
         '18': '4.5rem'
+      },
+      colors: {
+        'special-blue': '#3B92BC'
       }
     },
   },

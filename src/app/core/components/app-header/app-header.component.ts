@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faHouse, faSearch, faUser, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faHouse, faSearch, faUser, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { MainNavigationModel } from "../../models/ui/Main-navigation.model";
 
 @Component({
@@ -13,11 +13,15 @@ export class AppHeaderComponent {
   nav: MainNavigationModel[] = [
     {
       icon: faHouse,
-      navigateTo: ''
+      navigateTo: 'feed'
     },
     {
       icon: faUser,
-      navigateTo: ''
+      navigateTo: 'user/profile'
+    },
+    {
+      icon: faComment,
+      navigateTo: 'messages'
     }
   ];
 }

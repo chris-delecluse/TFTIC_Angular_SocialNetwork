@@ -14,21 +14,28 @@
 
   </div>
 
-  <nav class="bg-green-400 row-start-2 col-span-full h-full
+  <nav class="row-start-2 col-span-full h-full
               sm:row-start-1 sm:col-start-2 sm:col-end-2">
 
-    <ul *ngFor="let item of nav">
-      <li>
-        <a [routerLink]="item.navigateTo">
-          <fa-icon [icon]="item.icon"/>
+    <ul class="flex gap-3 justify-around h-full items-center bg-primary bg-opacity-50 rounded-lg">
+      <li *ngFor="let item of nav" class="w-full h-9 active:translate-y-0.5">
+
+        <a [routerLink]="item.navigateTo" routerLinkActive="text-special-blue text-opacity-100"
+           class="w-full h-full text-white text-opacity-50 flex items-center justify-center transition-all ease-in-out duration-500
+                  hover:bg-white hover:bg-opacity-50 hover:text-white hover:rounded-lg">
+
+          <fa-icon [icon]="item.icon" class="text-xl"/>
         </a>
       </li>
     </ul>
 
   </nav>
 
-  <div class="bg-red-400 col-start-3 h-full">
-    3
+  <div class="col-start-3 h-full flex items-center justify-end">
+    <p class="mr-5 text-white text-opacity-50 hidden sm:block">@DiwaCode</p>
+    <div class="rounded-full border-2 border-white border-opacity-50 w-11 h-11 flex items-center justify-center bg-secondary">
+
+    </div>
   </div>
 
 </header>

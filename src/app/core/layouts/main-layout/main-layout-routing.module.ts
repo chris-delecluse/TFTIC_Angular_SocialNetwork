@@ -5,11 +5,24 @@ import { MainLayoutComponent } from "./components/main-layout.component";
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'feed',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: MainLayoutComponent,
     children: [
       {
         path: 'feed',
         loadChildren: () => import("../../../features/post/post.module").then(m => m.PostModule)
+      },
+      {
+        path: 'user',
+        loadChildren: () => import("../../../features/user/user.module").then(m => m.UserModule)
+      },
+      {
+        path: 'messages',
+        loadChildren: () => import("../../../features/chat/chat.module").then(m => m.ChatModule)
       }
     ]
   }
@@ -19,4 +32,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MainLayoutRoutingModule { }
+export class MainLayoutRoutingModule {
+}
