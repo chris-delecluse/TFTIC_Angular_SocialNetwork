@@ -17,11 +17,11 @@
   <nav class="row-start-2 col-span-full h-full
               sm:row-start-1 sm:col-start-2 sm:col-end-2">
 
-    <ul class="flex gap-3 justify-around h-full items-center bg-primary bg-opacity-50 rounded-lg">
-      <li *ngFor="let item of nav" class="w-full h-9 active:translate-y-0.5">
+    <ul class="flex justify-around h-full items-center bg-primary bg-opacity-50 rounded-lg">
+      <li *ngFor="let item of nav" class="w-full h-full active:translate-y-0.5">
 
-        <a [routerLink]="item.navigateTo" routerLinkActive="text-special-blue text-opacity-100"
-           class="w-full h-full text-white text-opacity-50 flex items-center justify-center transition-all ease-in-out duration-500
+        <a [routerLink]="item.navigateTo" routerLinkActive="bg-white bg-opacity-10"
+           class="w-full h-full text-white text-opacity-50 flex items-center justify-center transition-all ease-in-out duration-500 rounded-lg
                   hover:bg-white hover:bg-opacity-50 hover:text-white hover:rounded-lg">
 
           <fa-icon [icon]="item.icon" class="text-xl"/>

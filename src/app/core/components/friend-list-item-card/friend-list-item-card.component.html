@@ -1,0 +1,8 @@
+<div class="w-11 h-11 rounded-full border-2 overflow-hidden"
+     [ngClass]="isConnected ? 'border-green-400' : 'border-white border-opacity-50'">
+  <img [ngSrc]="src" [alt]="alt" [width]="width" [height]="height">
+</div>
+<div class="hidden md:block md:ml-2.5 text-sm">
+  <p class="font-extrabold">{{ firstName | titlecase}}</p>
+  <p class="font-ligh">{{lastName | titlecase}}</p>
+</div>

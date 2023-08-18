@@ -1,1 +1,21 @@
-<p>notifications works!</p>
+<aside class="h-full">
+  <div class="hidden sticky top-0 bg-primary md:block md:border-b-2 md:border-white md:border-opacity-50 md:mb-2.5">
+    <h3 class="text-base font-extrabold text-special-blue pb-1 text-center">
+      {{ 'notifications' | titlecase }}
+    </h3>
+  </div>
+
+  <ul class="flex h-full w-fit items-center gap-3.5 scrollbar-hide rounded-lg
+             md:gap-2.5 md:flex-col md:items-baseline md:flex-wrap md:h-fit md:w-full bg-secondary bg-opacity-20 md:bg-none md:bg-opacity-0 md:rounded-none">
+
+    <li class="relative flex text-white text-opacity-50 transition-all ease-in-out duration-300 cursor-pointer
+               md:w-full md:py-1 md:rounded-lg md:items-center md:bg-secondary md:bg-opacity-20 md:hover:text-opacity-100 md:hover:bg-opacity-80"
+        *ngFor="let item of fakeNotifications">
+      <div class="hidden md:block md:ml-2.5 text-sm">
+        <fa-icon [icon]="faCircleExclamation" class="text-special-blue absolute right-2 text-sm"/>
+        <p class="font-extrabold">{{ item.firstName | titlecase}} {{ item.lastName | titlecase }}</p>
+        <p class="font-light italic">{{ item.notificationText | lowercase}}</p>
+      </div>
+    </li>
+  </ul>
+</aside>

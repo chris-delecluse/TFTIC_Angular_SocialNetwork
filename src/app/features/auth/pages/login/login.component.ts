@@ -33,7 +33,7 @@ export class LoginComponent implements OnDestroy {
           this.errorMessage = error.error.errors['Email']?.[0] || error.error.errors['Password']?.[0];
       },
       complete: async () => {
-        await this._router.navigateByUrl("");
+        await this._router.navigateByUrl("feed");
       }
     });
   }
