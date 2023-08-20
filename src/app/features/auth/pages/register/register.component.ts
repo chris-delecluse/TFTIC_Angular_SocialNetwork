@@ -18,7 +18,6 @@ export class RegisterComponent {
 
   register = (form: RegisterFormModel) => {
     this._authService.register(form).subscribe({
-      next: () => {},
       error: (response) => {
         this.errors = [];
 
@@ -26,11 +25,7 @@ export class RegisterComponent {
           this.errors.push(response.error.message);
 
         for (const property in response.error.errors) {
-          const item: string = response.error.errors[property].at(0);
-
-          if (!this.errors.includes(item)) {
-            this.errors.push(item)
-          }
+          this.errors.push(response.error.errors[property].at(0))
         }
       },
       complete: () => this._router.navigateByUrl("auth/login")

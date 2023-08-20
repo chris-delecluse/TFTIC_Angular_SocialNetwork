@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faComment, faHouse, faSearch, faUser, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faGear, faHouse, faSearch, faUser, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { MainNavigationModel } from "../../models/ui/Main-navigation.model";
 
 @Component({
@@ -24,4 +24,5 @@ export class AppHeaderComponent {
       navigateTo: 'messages'
     }
   ];
+  protected readonly faGear = faGear;
 }

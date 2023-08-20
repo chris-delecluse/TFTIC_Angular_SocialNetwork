@@ -1,12 +1,14 @@
-<aside class="h-full">
-  <div class="hidden sticky top-0 bg-primary md:block md:border-b-2 md:border-white md:border-opacity-50 md:mb-2.5">
+<aside class="h-fit">
+  <div class="hidden sticky top-0 bg-primary
+              md:block md:border-b-2 md:border-white md:border-opacity-50 md:mb-2.5">
+
     <h3 class="text-base font-extrabold text-special-blue pb-1 text-center">
       {{ 'friends' | titlecase }}
     </h3>
   </div>
 
-    <ul class="flex h-full w-fit items-center px-2.5 gap-3.5 scrollbar-hide rounded-lg
-               md:px-0 md:gap-2.5 md:flex-col md:items-baseline md:flex-wrap md:h-fit md:w-full bg-secondary bg-opacity-20 md:bg-none md:bg-opacity-0 md:rounded-none">
+    <ul class="flex h-full w-fit items-center px-2.5 gap-3.5 scrollbar-hide rounded-lg bg-secondary bg-opacity-20
+               md:px-0 md:gap-2.5 md:flex-col md:items-baseline md:flex-wrap md:h-fit md:w-full md:bg-none md:bg-opacity-0 md:rounded-none">
 
       <li class="md:w-full"
           *ngFor="let item of fakeList">

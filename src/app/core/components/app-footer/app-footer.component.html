@@ -1,3 +1,17 @@
-<p>app-footer works!</p>
-
-<router-outlet name="app-header" />
+<footer class="h-full flex gap-3.5 justify-center items-center text-white text-opacity-50 text-sm">
+  <p>Author :
+    <span class="italic font-extrabold">
+        {{ 'christopher delecluse' | titlecase }}
+    </span>
+  </p>
+  <div>
+    <ul class="flex gap-3.5">
+      <li *ngFor="let item of footerLinks">
+        <a [href]="item.navigateTo" target="_blank">
+          <fa-icon [icon]="item.icon"
+                   class="text-xl"/>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
