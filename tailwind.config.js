@@ -15,9 +15,6 @@ module.exports = {
       },
       colors: {
         'special-blue': '#3B92BC'
-      },
-      height: {
-        '6.5-vh': '6.5vh'
       }
     },
   },

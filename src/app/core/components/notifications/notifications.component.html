@@ -1,19 +1,19 @@
-<aside class="h-fit">
+<aside class="h-full md:h-fit">
   <div class="z-10 sticky top-0 bg-primary md:border-b-2 md:border-white md:border-opacity-50 md:mb-2.5">
     <h3 class="hidden md:block text-base font-extrabold text-special-blue pb-1 text-center">
       {{ 'notifications' | titlecase }}
     </h3>
   </div>
 
-  <button class="md:hidden bg-secondary bg-opacity-20 w-full h-6.5-vh active:translate-y-0.5 text-2xl text-special-blue font-semibold
-                 hover:bg-opacity-50">
+  <button class="md:hidden bg-secondary bg-opacity-20 w-full h-full active:translate-y-0.5 text-2xl text-special-blue font-semibold
+                 hover:bg-opacity-50 rounded-lg">
     {{ 'notifications' | uppercase }}
     <span>
         <fa-icon [icon]="faCircleExclamation" class="text-special-blue pl-2"/>
     </span>
   </button>
 
-  <ul class="hidden flex-col h-full w-full items-center gap-3.5 scrollbar-hide rounded-lg
+  <ul class="hidden flex-col h-full w-full items-center gap-3.5 scrollbar-hide
              md:flex md:gap-2.5 md:flex-col md:items-baseline md:flex-wrap md:h-fit md:bg-none md:bg-opacity-0 md:rounded-none">
 
     <li *ngFor="let item of fakeNotifications"
