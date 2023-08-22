@@ -15,6 +15,13 @@ module.exports = {
       },
       colors: {
         'special-blue': '#3B92BC'
+      },
+      borderColor: {
+        primary: '#2D303D',
+        secondary: '#5E6D73',
+      },
+      borderWidth: {
+        '10' : '10px'
       }
     },
   },

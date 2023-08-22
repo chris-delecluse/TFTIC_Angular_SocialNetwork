@@ -5,13 +5,19 @@
     </h3>
   </div>
 
-  <button class="md:hidden bg-secondary bg-opacity-20 w-full h-full active:translate-y-0.5 text-2xl text-special-blue font-semibold
+  <button (click)="setIsOpen()"
+          class="md:hidden bg-secondary bg-opacity-20 w-full h-full active:translate-y-0.5 text-2xl text-special-blue font-semibold
                  hover:bg-opacity-50 rounded-lg">
     {{ 'notifications' | uppercase }}
     <span>
         <fa-icon [icon]="faCircleExclamation" class="text-special-blue pl-2"/>
     </span>
   </button>
+
+  <app-notification-modal
+    [isOpen]="notificationIsOpen"
+    (emitOnClose)="setIsClosed($event)"
+    [notifications]="fakeNotifications"/>
 
   <ul class="hidden flex-col h-full w-full items-center gap-3.5 scrollbar-hide
              md:flex md:gap-2.5 md:flex-col md:items-baseline md:flex-wrap md:h-fit md:bg-none md:bg-opacity-0 md:rounded-none">
@@ -21,12 +27,10 @@
                hover:text-opacity-100 hover:bg-opacity-80
                md:py-1 md:rounded-lg md:items-center">
 
-      <div class="md:ml-2.5 text-sm">
-        <fa-icon [icon]="faCircleExclamation" class="text-special-blue absolute right-2 text-sm"/>
-        <p class="font-extrabold">{{ item.firstName | titlecase}} {{ item.lastName | titlecase }}</p>
-        <p class="font-light italic">{{ item.notificationText | lowercase}}</p>
-      </div>
-
+      <app-notification-list-item-card
+        [firstName]="item.firstName"
+        [lastName]="item.lastName"
+        [notificationText]="item.notificationText"/>
     </li>
   </ul>
 </aside>

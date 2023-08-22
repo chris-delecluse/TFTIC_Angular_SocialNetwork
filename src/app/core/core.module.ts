@@ -9,12 +9,16 @@ import { FriendListComponent } from './components/friend-list/friend-list.compon
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { FriendListItemCardComponent } from './components/friend-list-item-card/friend-list-item-card.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { NotificationListItemCardComponent } from './components/notification-list-item-card/notification-list-item-card.component';
+import { NotificationModalComponent } from './components/notification-modal/notification-modal.component';
 
 @NgModule({
   declarations: [
     FriendListComponent,
     NotificationsComponent,
-    FriendListItemCardComponent
+    FriendListItemCardComponent,
+    NotificationListItemCardComponent,
+    NotificationModalComponent
   ],
   imports: [
     CommonModule,

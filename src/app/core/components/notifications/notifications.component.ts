@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faCircleExclamation, faExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faCircleExclamation, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export class NotificationModel {
   id!: number;
@@ -14,6 +14,10 @@ export class NotificationModel {
   styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent {
+  protected readonly faCircleExclamation: IconDefinition = faCircleExclamation;
+
+  notificationIsOpen: boolean = false;
+
   fakeNotifications: NotificationModel[] = [
     {
       id: 1,
@@ -52,6 +56,12 @@ export class NotificationsComponent {
       notificationText: 'liked your post.',
     },
   ];
-  protected readonly faExclamation = faExclamation;
-  protected readonly faCircleExclamation = faCircleExclamation;
+
+  setIsOpen = (): void => {
+    this.notificationIsOpen = true;
+  }
+
+  setIsClosed = (value: boolean) => {
+    this.notificationIsOpen = value;
+  }
 }
