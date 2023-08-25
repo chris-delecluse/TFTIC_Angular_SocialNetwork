@@ -1,0 +1,38 @@
+<aside class="h-full md:h-fit">
+  <div class="hidden sticky top-0 bg-primary
+              md:block md:border-b-2 md:border-white md:border-opacity-50 md:mb-2.5">
+
+    <h3 class="text-base font-extrabold text-special-blue pb-1 text-center">
+      {{ 'friends' | titlecase }}
+    </h3>
+  </div>
+
+    <ul class="flex h-full w-full items-center px-2.5 gap-3.5 scrollbar-hide rounded-lg bg-secondary bg-opacity-20
+               md:px-0 md:gap-2.5 md:flex-col md:items-baseline md:flex-wrap md:h-fit md:w-full md:bg-none md:bg-opacity-0 md:rounded-none">
+
+<!--      <li class="md:w-full"-->
+<!--          *ngFor="let item of fakeList">-->
+<!--        <app-friend-list-item-card class="flex text-white text-opacity-50 transition-all ease-in-out duration-300 cursor-pointer-->
+<!--                                          md:rounded-lg md:items-center md:bg-secondary md:bg-opacity-20 md:w-full md:hover:text-opacity-100 md:hover:bg-opacity-80"-->
+<!--                                   [firstName]="item.firstName"-->
+<!--                                   [lastName]="item.lastName"-->
+<!--                                   [isConnected]="item.isConnected"-->
+<!--                                   [src]="item.avatarUrl"-->
+<!--                                   width="200"-->
+<!--                                   height="250"-->
+<!--                                   alt="user profile picture"/>-->
+<!--      </li>-->
+      <li class="md:w-full"
+          *ngFor="let item of friendList">
+        <app-friend-list-item-card class="flex text-white text-opacity-50 transition-all ease-in-out duration-300 cursor-pointer
+                                          md:rounded-lg md:items-center md:bg-secondary md:bg-opacity-20 md:w-full md:hover:text-opacity-100 md:hover:bg-opacity-80"
+                                   [firstName]="item.firstName"
+                                   [lastName]="item.lastName"
+                                   [isConnected]="true"
+                                   [src]="item.profilePicture"
+                                   width="200"
+                                   height="250"
+                                   alt="user profile picture"/>
+      </li>
+    </ul>
+</aside>

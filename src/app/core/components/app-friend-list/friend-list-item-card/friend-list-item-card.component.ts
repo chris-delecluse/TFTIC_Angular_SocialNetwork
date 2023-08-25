@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-friend-list-item-card',
@@ -13,17 +14,18 @@ export class FriendListItemCardComponent {
   lastName!: string;
 
   @Input()
-  src!: string;
+  src?: string;
 
   @Input()
-  alt!: string;
+  alt?: string;
 
   @Input()
-  width!: string;
+  width?: string;
 
   @Input()
-  height!: string;
+  height?: string;
 
   @Input()
   isConnected!: boolean;
+  protected readonly faUser = faUser;
 }

@@ -20,7 +20,7 @@ export class LoginComponent implements OnDestroy {
     private _router: Router
   ) {}
 
-  public login = (form: LoginFormModel) => {
+  public login = (form: LoginFormModel): void => {
     this._authService.login(form).subscribe({
       next: (response) => {
         this._tokenService.storeToken(response.data.token);

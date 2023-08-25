@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'messages',
         loadChildren: () => import("../../../features/chat/chat.module").then(m => m.ChatModule)
+      },
+      {
+        path: 'friends',
+        loadChildren: () => import("../../../features/friend/friend.module").then(m => m.FriendModule)
       }
     ]
   }

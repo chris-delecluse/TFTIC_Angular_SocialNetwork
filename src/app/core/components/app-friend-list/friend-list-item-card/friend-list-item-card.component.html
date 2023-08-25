@@ -1,0 +1,13 @@
+<div class="w-12 h-12 md:w-11 md:h-11 rounded-full border-2 overflow-hidden flex items-center justify-center"
+     [ngClass]="isConnected ? 'border-green-400' : 'border-white border-opacity-50'">
+  <ng-container *ngIf="src; else icon">
+    <img [ngSrc]="src" [alt]="alt" [width]="width" [height]="height">
+  </ng-container>
+  <ng-template #icon>
+    <fa-icon [icon]="faUser" class="text-2xl" />
+  </ng-template>
+</div>
+<div class="hidden md:block md:ml-2.5 text-sm">
+  <p class="font-extrabold">{{ firstName | titlecase}}</p>
+  <p class="font-ligh">{{lastName | titlecase}}</p>
+</div>

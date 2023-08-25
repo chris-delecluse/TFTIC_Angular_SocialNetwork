@@ -5,12 +5,12 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { AccessTokenInterceptor } from "./interceptors/access-token.interceptor";
 import { UnauthorizedInterceptor } from "./interceptors/unauthorized.interceptor";
 import { RouterOutlet } from "@angular/router";
-import { FriendListComponent } from './components/friend-list/friend-list.component';
-import { NotificationsComponent } from './components/notifications/notifications.component';
-import { FriendListItemCardComponent } from './components/friend-list-item-card/friend-list-item-card.component';
+import { FriendListComponent } from './components/app-friend-list/friend-list/friend-list.component';
+import { NotificationsComponent } from './components/app-notifications/notifications/notifications.component';
+import { FriendListItemCardComponent } from './components/app-friend-list/friend-list-item-card/friend-list-item-card.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { NotificationListItemCardComponent } from './components/notification-list-item-card/notification-list-item-card.component';
-import { NotificationModalComponent } from './components/notification-modal/notification-modal.component';
+import { NotificationListItemCardComponent } from './components/app-notifications/notification-list-item-card/notification-list-item-card.component';
+import { NotificationModalComponent } from './components/app-notifications/notification-modal/notification-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { NotificationModalComponent } from './components/notification-modal/noti
     NotificationsComponent,
     FriendListItemCardComponent,
     NotificationListItemCardComponent,
-    NotificationModalComponent
+    NotificationModalComponent,
   ],
   imports: [
     CommonModule,
