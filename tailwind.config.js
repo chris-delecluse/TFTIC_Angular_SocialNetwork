@@ -11,7 +11,9 @@ module.exports = {
         hover: '#505463'
       },
       inset: {
-        '18': '4.5rem'
+        '18': '4.5rem',
+        '2.75': '0.775rem',
+        '4.5': '1.125rem'
       },
       colors: {
         'special-blue': '#3B92BC'
@@ -21,7 +23,16 @@ module.exports = {
         secondary: '#5E6D73',
       },
       borderWidth: {
-        '10' : '10px'
+        '10': '10px',
+      },
+      height: {
+        '89-vh': '89vh',
+        '68-vh': '68vh',
+        '25-vh': '25vh',
+        '18-vh': '18vh'
+      },
+      padding: {
+        17: '4.250rem'
       }
     },
   },

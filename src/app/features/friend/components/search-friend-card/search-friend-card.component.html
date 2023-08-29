@@ -1,1 +1,19 @@
-<p>search-friend-card works!</p>
+<div class="bg-primary flex justify-between p-2.5 rounded-lg cursor-pointer border-2 border-white border-opacity-10 transition-all ease-in-out duration-300 active:translate-y-1
+            hover:bg-secondary hover:bg-opacity-20 text-white text-opacity-50 hover:text-white hover:-translate-y-1">
+  <div class="flex gap-3 items-center">
+    <div class="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center border-2 border-white border-opacity-10">
+      <ng-container *ngIf="friendCard.profilePicture != null; else icon">
+        <img [ngSrc]="friendCard.profilePicture" alt="profile picture" width="200" height="200">
+      </ng-container>
+
+      <ng-template #icon>
+        <fa-icon [icon]="faUser" class="text-3xl text-white text-opacity-50"/>
+      </ng-template>
+    </div>
+    <div>
+      <p class="font-extrabold">{{ friendCard.firstName | titlecase }}</p>
+      <p class="font-light">{{ friendCard.lastName | titlecase }}</p>
+    </div>
+  </div>
+  <p class="italic font-light text-sm">not friend yet</p>
+</div>

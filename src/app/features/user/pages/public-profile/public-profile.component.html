@@ -1,0 +1,38 @@
+<app-page-title title="friend profile"/>
+<app-backdrop-and-profile-picture [profilePicture]="userData.profilePicture"/>
+<app-user-profile-data [userData]="userData">
+  <div class="flex flex-col justify-between items-end gap-2">
+    <app-ui-primary-button styles="bg-special-blue bg-opacity-50 text-white w-28 px-0 justify-center gap-2">
+      message
+      <span>
+        <fa-icon [icon]="faMessage"/>
+      </span>
+    </app-ui-primary-button>
+
+
+    <!--    <app-friend-button [userProfileId]="userData.id"-->
+    <!--                       [friendRequestStatus]="userData.friendRequestStatus"-->
+    <!--                       [isFriendRequestInitiator]="userData.isFriendRequestInitiator!"/>-->
+
+    <app-request-friend-button
+      [userProfileId]="userData.id"
+      [friendRequestStatus]="userData.friendRequestStatus"
+      [isFriendRequestInitiator]="userData.isFriendRequestInitiator!"
+      (emitRequestFriendButtonClicked$)="updateUserProfile($event)"
+    />
+    <app-remove-friend-button
+      [userProfileId]="userData.id"
+      [friendRequestStatus]="userData.friendRequestStatus"
+      [isFriendRequestInitiator]="userData.isFriendRequestInitiator!"
+      (emitRequestFriendButtonClicked$)="updateUserProfile($event)"
+    />
+
+    <app-cancel-request-friend-button
+      [userProfileId]="userData.id"
+      [friendRequestStatus]="userData.friendRequestStatus"
+      [isFriendRequestInitiator]="userData.isFriendRequestInitiator!"
+      (emitRequestFriendButtonClicked$)="updateUserProfile($event)"
+    />
+
+  </div>
+</app-user-profile-data>

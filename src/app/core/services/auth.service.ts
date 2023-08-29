@@ -29,6 +29,4 @@ export class AuthService {
     setIsConnected(status: boolean): void {
         this._isConnected = status;
     }
-
-
 }

@@ -1,1 +1,14 @@
-<p>friends works!</p>
+<div class="h-full rounded-lg">
+  <app-page-title title="friends"/>
+  <app-search-friend-input/>
+
+  <div class="p-1.5 flex flex-col gap-2
+              md:gap-0 md:flex-row md:flex-wrap md:-mx-1 md:-my-1">
+
+    <app-search-friend-card *ngFor="let item of friendCards"
+                            class="md:w-1/2 md:px-1 md:py-1"
+                            [friendCard]="item"
+                            (click)="onClickCard(item.id)"/>
+
+  </div>
+</div>

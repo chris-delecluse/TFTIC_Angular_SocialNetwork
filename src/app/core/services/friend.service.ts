@@ -14,4 +14,12 @@ export class FriendService {
   getFriendList = (): Observable<ApiResponseModel<FriendModel[]>> => {
     return this._httpFriendListService.getFriendList();
   }
+
+  postFriendRequest = (userProfileId: number): Observable<ApiResponseModel<string>> => {
+    return this._httpFriendListService.postFriendRequest(userProfileId);
+  }
+
+  removeFriendOrCancelRequest = (userId : number) : Observable<ApiResponseModel<string>> => {
+    return this._httpFriendListService.removeFriendOrCancelRequest(userId);
+  }
 }

@@ -9,7 +9,7 @@ import {
   IconDefinition
 } from "@fortawesome/free-solid-svg-icons";
 import { MainNavigationModel } from "../../models/ui/Main-navigation.model";
-import { MinimalUserProfileInfoModel } from "../../models/user/Minimal-user-profile-info.model";
+import { BasicUserProfileModel } from "../../models/user/Basic-user-profile.model";
 import { UserService } from "../../services/user.service";
 
 @Component({
@@ -41,16 +41,16 @@ export class AppHeaderComponent implements OnInit {
     }
   ];
 
-  minimalUserProfileInfo?: MinimalUserProfileInfoModel;
+  minimalUserProfileInfo?: BasicUserProfileModel;
 
   constructor(private _userService: UserService) {}
 
   ngOnInit(): void {
-    this.getMinimalUserProfileInfo();
+    this.getBasicProfile();
   }
 
-  getMinimalUserProfileInfo = () => {
-    this._userService.getUserProfileInfo().subscribe({
+  getBasicProfile = () => {
+    this._userService.getBasicProfile().subscribe({
       next: async (response) => {
          this.minimalUserProfileInfo = response.data;
       },

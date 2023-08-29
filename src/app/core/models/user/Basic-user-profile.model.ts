@@ -1,4 +1,4 @@
-export class MinimalUserProfileInfoModel {
+export class BasicUserProfileModel {
   id !: number;
   firstName !: string;
   lastName !: string;

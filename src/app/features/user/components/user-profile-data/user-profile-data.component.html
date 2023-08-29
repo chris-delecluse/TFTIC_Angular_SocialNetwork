@@ -1,0 +1,35 @@
+<div class=" text-white text-opacity-50 text-base">
+  <div
+    class="flex justify-between pt-12 pb-8 px-4 border-b-10 border-primary transition-all ease-in-out duration-300 md:pt-17">
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center gap-2.5">
+        <fa-icon [icon]="faUser"/>
+        <h3 class="text-xl font-light md:text-2xl">
+          <span class="font-extrabold">{{ userData.firstName | titlecase }}</span>
+          {{ userData.lastName | titlecase }}
+        </h3>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <fa-icon [icon]="faNeuter"/>
+        <p>{{ userData.gender ?? 'not specified' }}</p>
+      </div>
+      <div class="flex items-center gap-2.5">
+        <fa-icon [icon]="faHeart"/>
+        <p>{{ userData.relationShipStatus ?? 'not specified' }}</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <fa-icon [icon]="faCakeCandles"/>
+        <p>{{ (userData.birthDate | date | lowercase) ?? 'not specified' }}
+          <em class="italic">(unknown year(s) old)</em>
+        </p>
+      </div>
+      <div class="flex items-center gap-3">
+        <fa-icon [icon]="faGlobe"/>
+        <p>{{ userData.country ?? 'not specified' }}</p>
+      </div>
+
+    </div>
+    <ng-content/>
+  </div>
+</div>

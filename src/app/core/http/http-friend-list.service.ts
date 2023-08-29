@@ -15,4 +15,12 @@ export class HttpFriendListService {
   getFriendList = (): Observable<ApiResponseModel<FriendModel[]>> => {
     return this._httpClient.get<ApiResponseModel<FriendModel[]>>(`${environment.apiUrl}/friend`);
   }
+
+  postFriendRequest = (userId: number): Observable<ApiResponseModel<string>> => {
+    return this._httpClient.post<ApiResponseModel<string>>(`${environment.apiUrl}/friend`, {userId: userId});
+  }
+
+  removeFriendOrCancelRequest = (userId: number): Observable<ApiResponseModel<string>> => {
+    return this._httpClient.delete<ApiResponseModel<string>>(`${environment.apiUrl}/friend/${userId}`)
+  }
 }

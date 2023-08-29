@@ -11,6 +11,7 @@ import { FriendListItemCardComponent } from './components/app-friend-list/friend
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { NotificationListItemCardComponent } from './components/app-notifications/notification-list-item-card/notification-list-item-card.component';
 import { NotificationModalComponent } from './components/app-notifications/notification-modal/notification-modal.component';
+import { AppPageTitleComponent } from './components/app-page-title/app-page-title.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NotificationModalComponent } from './components/app-notifications/notif
     FriendListItemCardComponent,
     NotificationListItemCardComponent,
     NotificationModalComponent,
+    AppPageTitleComponent,
   ],
   imports: [
     CommonModule,
@@ -30,7 +32,8 @@ import { NotificationModalComponent } from './components/app-notifications/notif
   ],
   exports: [
     FriendListComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    AppPageTitleComponent,
   ],
   providers: [
     {

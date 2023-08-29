@@ -1,0 +1,17 @@
+<div class="relative py-1.5 px-1.5
+            md:pt-0">
+
+  <form [formGroup]="searchForm"
+        class="flex gap-2 items-center">
+    <fa-icon [icon]="faSearch" class="absolute top-4.5 left-6 text-white text-opacity-50
+                                      md:top-2.75"/>
+
+    <input type="text" placeholder="Search" class="border-none" formControlName="searchUser">
+    <app-ui-primary-button
+      (click)="onSubmit()"
+      styles="bg-primary border-2 border-special-blue text-special-blue hover:bg-opacity-90
+              hover:bg-secondary hover:text-white hover:border-2 hover:border-white hover:border-opacity-50">
+      search
+    </app-ui-primary-button>
+  </form>
+</div>
