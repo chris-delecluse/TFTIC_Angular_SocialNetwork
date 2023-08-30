@@ -1,11 +1,10 @@
 <app-page-title title="profile"/>
-<app-backdrop-and-profile-picture [profilePicture]="userData.profilePicture" backdropImage="https://www.zealousweb.com/wp-content/uploads/2021/05/Featured-%E2%80%93-6.jpg"/>
+<app-backdrop-and-profile-picture [profilePicture]="userData.profilePicture" [backdropImage]="userData.backdropImage"/>
 <app-user-profile-data [userData]="userData">
   <div class="flex gap-2 justify-end">
-    <app-ui-primary-button styles="bg-primary border-2 border-special-blue text-special-blue hover:bg-opacity-90
-                                   hover:bg-secondary hover:text-white hover:border-2 hover:border-white hover:border-opacity-50"
-                           (click)="onClick()">
-      edit <span class="pl-2"><fa-icon [icon]="faEdit"/></span>
-    </app-ui-primary-button>
+    <app-main-button [icon]="faEdit" text="edit" (click)="onClick()" />
   </div>
 </app-user-profile-data>
+
+
+<!--https://www.zealousweb.com/wp-content/uploads/2021/05/Featured-%E2%80%93-6.jpg-->

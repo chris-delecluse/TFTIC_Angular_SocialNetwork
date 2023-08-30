@@ -3,6 +3,7 @@ export interface FullPrivateProfileModel {
   firstName: string;
   lastName: string;
   profilePicture?: string;
+  backdropImage?: string;
   gender?: string;
   birthDate?: Date;
   country?: string;

@@ -6,27 +6,25 @@
   <h2 class="text-center text-white text-3xl">{{ "register" | uppercase }}</h2>
 
   <div class="space-y-10 pt-20">
-      <ng-container *ngFor="let input of formInputs">
-        <div class="relative">
+    <ng-container *ngFor="let input of formInputs">
+      <div class="relative">
               <span
                 *ngIf="!form.controls[input.name].valid && form.controls[input.name].touched"
                 class="text-red-600 absolute -top-8 left-4">
                   {{ input.errorMessage }}
               </span>
 
-          <fa-icon [icon]="input.icon" class="text-xl absolute top-2 left-4 text-white"/>
+        <fa-icon [icon]="input.icon" class="text-xl absolute top-2 left-4 text-white"/>
 
-          <input [type]="input.type"
-                 [placeholder]="input.placeholder"
-                 [formControlName]="input.name"/>
-        </div>
-      </ng-container>
-    </div>
+        <input [type]="input.type"
+               [placeholder]="input.placeholder"
+               [formControlName]="input.name"/>
+      </div>
+    </ng-container>
+  </div>
 
   <div class="mx-auto">
-    <app-ui-primary-button (click)="onSubmit()" styles="bg-white bg-opacity-50">
-      Register
-    </app-ui-primary-button>
+    <app-auth-button text="Register" (click)="onSubmit()"/>
   </div>
 
   <p class="text-center text-white">

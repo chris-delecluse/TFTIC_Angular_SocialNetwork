@@ -4,7 +4,8 @@
 
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=date], {
   @apply appearance-none bg-primary border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600 transition
   rounded-md w-full py-3 text-white leading-tight focus:outline-none focus:ring-gray-600;
 }

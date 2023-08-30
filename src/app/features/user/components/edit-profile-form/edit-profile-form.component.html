@@ -1,1 +1,56 @@
-<p>edit-profile-form works!</p>
+<form class="text-white text-opacity-50">
+
+  <div class="flex flex-col gap-4 border-b-10 border-b-primary py-6 px-2">
+    <app-absolut-icon [icon]="faImage" top="top-2.5" left="left-3.5" class="relative">
+      <input type="text" class="border-none" placeholder="Profile picture url"/>
+    </app-absolut-icon>
+
+    <app-absolut-icon [icon]="faImage" top="top-2.5" left="left-3.5" class="relative">
+      <input type="text" class="border-none" placeholder="Backdrop image url"/>
+    </app-absolut-icon>
+  </div>
+
+  <div class="flex flex-col gap-4 border-b-10 border-b-primary py-6 px-2">
+    <app-absolut-icon [icon]="faCakeCandles" top="top-2.5" left="left-3.5" class="relative">
+      <input type="date" class="border-none pr-4"/>
+    </app-absolut-icon>
+
+    <app-absolut-icon [icon]="faNeuter" top="top-2.5" left="left-3.5" class="relative">
+      <input type="text" class="border-none" placeholder="Gender"/>
+    </app-absolut-icon>
+
+    <app-absolut-icon [icon]="faGlobe" top="top-2.5" left="left-3.5" class="relative">
+      <input type="text" class="border-none" placeholder="Country"/>
+    </app-absolut-icon>
+  </div>
+
+  <div class="flex flex-col gap-7 py-6 px-2">
+
+    <div class="flex flex-col gap-2">
+      <div class="pl-3.5 flex gap-4 items-center">
+        <fa-icon [icon]="faHeart" class="text-lg"/>
+        <p>Relationship status</p>
+      </div>
+
+      <div class="flex gap-2">
+        <div class="flex items-center pl-4 border-4 border-primary rounded-lg flex-1">
+          <input id="single" type="radio" value="" name="relationshipStatus"
+                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="single"
+                 class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Single</label>
+        </div>
+        <div class="flex items-center pl-4 border-4 border-primary rounded-lg flex-1">
+          <input checked id="couple" type="radio" value="" name="relationshipStatus"
+                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="couple"
+                 class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Couple</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto ">
+      <app-main-button [icon]="faSave" text="save changes"/>
+    </div>
+  </div>
+
+</form>
