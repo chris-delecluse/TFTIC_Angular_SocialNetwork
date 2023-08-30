@@ -28,7 +28,7 @@ export class RemoveFriendButtonComponent {
   constructor(private _friendService: FriendService) {}
 
   onClick = (): void => {
-    this._friendService.removeFriendOrCancelRequest(this.userProfileId).subscribe({
+    this._friendService.removeOrCancelFriendRequest(this.userProfileId).subscribe({
       next: (response: ApiResponseModel<string>) => {
         if (response.statusCode === 204)
           this.emitRequestFriendButtonClicked$.emit(undefined);

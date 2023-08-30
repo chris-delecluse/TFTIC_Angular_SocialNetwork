@@ -4,6 +4,7 @@ import { UserService } from "../../../../core/services/user.service";
 import { ActivatedRoute } from "@angular/router";
 import { ApiResponseModel } from "../../../../core/models/Api-response.model";
 import { FullPublicProfileModel } from "../../../../core/models/user/Full-public-profile.model";
+import { FriendStatus } from "../../../../core/enums/friend-status";
 
 @Component({
   selector: 'app-public-profile',
@@ -39,4 +40,5 @@ export class PublicProfileComponent implements OnInit {
   updateUserProfile = ($event: string): void => {
     this.userData.friendRequestStatus = $event;
   }
+  protected readonly FriendStatus = FriendStatus;
 }

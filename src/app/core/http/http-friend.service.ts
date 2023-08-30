@@ -8,7 +8,7 @@ import { environment } from "../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class HttpFriendListService {
+export class HttpFriendService {
 
   constructor(private _httpClient: HttpClient) { }
 
@@ -20,7 +20,14 @@ export class HttpFriendListService {
     return this._httpClient.post<ApiResponseModel<string>>(`${environment.apiUrl}/friend`, {userId: userId});
   }
 
-  removeFriendOrCancelRequest = (userId: number): Observable<ApiResponseModel<string>> => {
+  removeOrCancelFriendRequest = (userId: number): Observable<ApiResponseModel<string>> => {
     return this._httpClient.delete<ApiResponseModel<string>>(`${environment.apiUrl}/friend/${userId}`)
+  }
+
+  updateRequestFriendStatus = (userId: number, isAccepted: boolean): Observable<ApiResponseModel<string>> => {
+    return this._httpClient.patch<ApiResponseModel<string>>(`${environment.apiUrl}/friend`, {
+      requestId: userId,
+      isAccepted: isAccepted
+    });
   }
 }
