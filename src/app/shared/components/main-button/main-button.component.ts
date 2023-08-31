@@ -8,7 +8,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 })
 export class MainButtonComponent {
   @Input()
-  icon!: IconDefinition;
+  icon?: IconDefinition;
 
   @Input()
   text!: string;

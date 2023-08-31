@@ -6,6 +6,7 @@ import { BasicUserProfileModel } from "../models/user/Basic-user-profile.model";
 import { environment } from "../../../environments/environment";
 import { FullPrivateProfileModel } from "../models/user/Full-private-profile.model";
 import { FullPublicProfileModel } from "../models/user/Full-public-profile.model";
+import { EditUserProfileModel } from "../models/user/Edit-user-profile.model";
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,9 @@ export class HttpUserService {
 
   getPublicFullProfileById = (id: number): Observable<ApiResponseModel<FullPublicProfileModel>> => {
     return this._httpClient.get<ApiResponseModel<FullPublicProfileModel>>(`${environment.apiUrl}/user/profile/${id}/details`);
+  }
+
+  patchUserProfile = (profile: EditUserProfileModel): Observable<ApiResponseModel<string>> => {
+    return this._httpClient.patch<ApiResponseModel<string>>(`${environment.apiUrl}/user`, profile);
   }
 }

@@ -29,7 +29,7 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
-  onSubmit = () => {
+  onSubmit = (): void => {
     this.emitLoginSubmit$.emit(this.form.value)
   }
 }

@@ -5,6 +5,7 @@ import { ApiResponseModel } from "../models/Api-response.model";
 import { BasicUserProfileModel } from "../models/user/Basic-user-profile.model";
 import { FullPrivateProfileModel } from "../models/user/Full-private-profile.model";
 import { FullPublicProfileModel } from "../models/user/Full-public-profile.model";
+import { EditUserProfileModel } from "../models/user/Edit-user-profile.model";
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,9 @@ export class UserService {
 
   getFullPublicProfileById = (id: number): Observable<ApiResponseModel<FullPublicProfileModel>> => {
     return this._httpUserService.getPublicFullProfileById(id);
+  }
+
+  patchUserProfile = (profile: EditUserProfileModel) : Observable<ApiResponseModel<string>> => {
+    return this._httpUserService.patchUserProfile(profile);
   }
 }

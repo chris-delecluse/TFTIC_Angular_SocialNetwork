@@ -12,21 +12,21 @@
 
       <div class="flex items-center gap-3">
         <fa-icon [icon]="faNeuter"/>
-        <p>{{ userData.gender ?? 'not specified' }}</p>
+        <p>{{ (userData.gender | titlecase) ?? 'not specified' }}</p>
       </div>
       <div class="flex items-center gap-2.5">
         <fa-icon [icon]="faHeart"/>
-        <p>{{ userData.relationShipStatus ?? 'not specified' }}</p>
+        <p>{{ (userData.relationShipStatus | titlecase) ?? 'not specified' }}</p>
       </div>
       <div class="flex items-center gap-3">
         <fa-icon [icon]="faCakeCandles"/>
-        <p>{{ (userData.birthDate | date | lowercase) ?? 'not specified' }}
-          <em class="italic">(unknown year(s) old)</em>
+        <p>{{ (userData.birthDate | date | titlecase) ?? 'not specified' }}
+          <em class="italic">({{(userData.birthDate! | age) + ' years old' ?? 'not specified' }})</em>
         </p>
       </div>
       <div class="flex items-center gap-3">
         <fa-icon [icon]="faGlobe"/>
-        <p>{{ userData.country ?? 'not specified' }}</p>
+        <p>{{ (userData.country | titlecase) ?? 'not specified' }}</p>
       </div>
 
     </div>

@@ -12,6 +12,7 @@ import { UserProfileDataComponent } from './components/user-profile-data/user-pr
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { EditProfileFormComponent } from './components/edit-profile-form/edit-profile-form.component';
 import { FriendModule } from "../friend/friend.module";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -23,14 +24,15 @@ import { FriendModule } from "../friend/friend.module";
     EditProfileComponent,
     EditProfileFormComponent
   ],
-  imports: [
-    CommonModule,
-    UserRoutingModule,
-    CoreModule,
-    NgOptimizedImage,
-    FontAwesomeModule,
-    SharedModule,
-    FriendModule
-  ]
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        CoreModule,
+        NgOptimizedImage,
+        FontAwesomeModule,
+        SharedModule,
+        FriendModule,
+        ReactiveFormsModule
+    ]
 })
 export class UserModule { }
