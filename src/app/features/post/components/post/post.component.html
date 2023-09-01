@@ -1,0 +1,32 @@
+<article class="flex flex-col gap-3.5 border-b-10 border-primary py-5 px-5 text-white text-opacity-50">
+  <div class="flex gap-2.5 items-center">
+    <app-profile-picture [src]="post.profilePicture!" cStyles="w-9 h-9"/>
+    <p class="text-base">
+      <span class="font-extrabold">{{ post.firstName | titlecase }}</span> {{ post.lastName | titlecase }}
+    </p>
+  </div>
+  <div>
+    <div class="rounded-lg bg-primary mx-4 overflow-y-auto scrollbar-hide border-10 border-primary cursor-pointer">
+      <p appTruncateContent [maxChars]="200" [postContent]="post.content">{{ post.content }}</p>
+    </div>
+    <div class="flex mt-2 gap-3">
+      <div class="bg-primary w-32 h-8 px-2 flex justify-around items-center rounded-lg ml-4
+                  transition-all ease-in-out duration-150
+                  md:w-40
+                  xl:w-60 xl:px-5">
+        <p>{{ post.commentCount }}</p>
+        <p>{{ post.likeCount }}</p>
+        <button>like</button>
+      </div>
+      <div class="flex flex-col gap-3 flex-1 mt-1.5">
+        <div *ngFor="let item of comment"
+             class="flex items-center gap-3">
+          <app-profile-picture [src]="item.commentProfilePicture!" cStyles="w-7 h-7 md:w-9 md:h-9"/>
+          <div class="rounded-lg bg-primary overflow-y-auto scrollbar-hide cursor-pointer px-2 py-1.5 flex-1 mr-4">
+            <p appTruncateContent [maxChars]="20" [postContent]="item.content"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faMessage, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { UserService } from "../../../../core/services/user.service";
 import { ActivatedRoute } from "@angular/router";
 import { ApiResponseModel } from "../../../../core/models/Api-response.model";
@@ -12,7 +11,7 @@ import { FriendStatus } from "../../../../core/enums/friend-status";
   styleUrls: ['./public-profile.component.scss']
 })
 export class PublicProfileComponent implements OnInit {
-  protected readonly faMessage: IconDefinition = faMessage;
+  protected readonly FriendStatus = FriendStatus;
 
   userData: FullPublicProfileModel = {
     id: 0,
@@ -40,5 +39,4 @@ export class PublicProfileComponent implements OnInit {
   updateUserProfile = ($event: string): void => {
     this.userData.friendRequestStatus = $event;
   }
-  protected readonly FriendStatus = FriendStatus;
 }

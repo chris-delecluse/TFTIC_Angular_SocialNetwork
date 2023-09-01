@@ -1,4 +1,9 @@
-<div>
-  <app-page-title title="feeds" />
-<app-toaster-message message="You are connected" [timer]="[1000,2000]" />
-</div>
+<app-page-title title="feeds"/>
+<app-mobile-title title="feeds" />
+
+<ng-container *ngFor="let item of posts">
+  <app-post [post]="item.post" [comment]="item.comments" />
+</ng-container>
+
+<!--<app-toaster-message message="You are connected" [timer]="[1000,2000]" />-->
+

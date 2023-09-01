@@ -37,15 +37,18 @@
         <p class="font-light italic text-sm">{{ minimalUserProfileInfo?.lastName | titlecase }}</p>
       </div>
 
-      <div
-        class="w-12 h-12 md:w-11 md:h-11 rounded-full border-2 overflow-hidden flex items-center justify-center">
-        <ng-container *ngIf="minimalUserProfileInfo?.profilePicture != null else icon">
-          <img [ngSrc]="minimalUserProfileInfo!.profilePicture" alt="profile picture" width="200" height="200">
-        </ng-container>
-        <ng-template #icon>
-          <fa-icon [icon]="faUser" class="text-2xl" />
-        </ng-template>
-      </div>
+      <!--      <div-->
+      <!--        class="w-12 h-12 md:w-11 md:h-11 rounded-full border-2 overflow-hidden flex items-center justify-center">-->
+      <!--        <ng-container *ngIf="minimalUserProfileInfo?.profilePicture != null else icon">-->
+      <!--          <img [ngSrc]="minimalUserProfileInfo!.profilePicture" alt="profile picture" width="200" height="200">-->
+      <!--        </ng-container>-->
+      <!--        <ng-template #icon>-->
+      <!--          <fa-icon [icon]="faUser" class="text-2xl" />-->
+      <!--        </ng-template>-->
+      <!--      </div>-->
+
+      <app-profile-picture *ngIf="minimalUserProfileInfo && minimalUserProfileInfo.profilePicture"
+                           [src]="minimalUserProfileInfo.profilePicture"/>
     </div>
   </div>
 </header>
