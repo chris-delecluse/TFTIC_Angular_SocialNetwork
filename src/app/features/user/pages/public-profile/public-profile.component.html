@@ -33,5 +33,6 @@
     </ng-template>
   </div>
 </app-user-profile-data>
-
-<app-user-posts [posts]="posts" />
+<app-user-posts [posts]="posts"/>
+<app-get-more-posts [posts]="posts" [userId]="userData.id"
+                    (emitNewPostsOnClick$)="addMorePosts($event)"/>

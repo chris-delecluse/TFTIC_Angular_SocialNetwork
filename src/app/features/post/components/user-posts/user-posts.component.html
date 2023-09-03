@@ -1,5 +1,3 @@
-<ng-container *ngFor="let item of posts">
+<ng-container *ngFor="let item of posts; trackBy: trackPosts">
   <app-post [post]="item.post" [comment]="item.comments"/>
 </ng-container>
-
-<app-get-more-posts/>

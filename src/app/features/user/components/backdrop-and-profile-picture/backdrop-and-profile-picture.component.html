@@ -1,8 +1,9 @@
 <header class="h-1/4 relative border-b-10 border-primary bg-primary bg-opacity-50">
   <img *ngIf="backdropImage" [ngSrc]="backdropImage" alt="backdrop image" fill="">
 
-  <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-secondary border-10 border-primary absolute -bottom-1/2 overflow-hidden"
-       style="left: 50%; transform: translateX(-50%)">
+  <div
+    class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-secondary border-10 border-primary absolute -bottom-16 md:-bottom-1/2 overflow-hidden"
+    style="left: 50%; transform: translateX(-50%)">
     <img *ngIf="profilePicture" [ngSrc]="profilePicture" alt="profile picture" fill="">
   </div>
 </header>

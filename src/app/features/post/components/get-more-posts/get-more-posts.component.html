@@ -1,9 +1,22 @@
-<div class="py-2.5 text-special-blue transition-all ease-in-out duration-300 cursor-pointer
-            hover:bg-secondary hover:text-white active:translate-y-1">
+<div *ngIf="posts && posts.length % 10 === 0 && posts.length !== 0; else notInRange"
+     class="py-2.5 text-special-blue transition-all ease-in-out duration-300 cursor-pointer
+            hover:bg-secondary hover:text-white active:translate-y-1"
+     (click)="getPostsOnClick()">
   <p class="text-sm text-center">
     {{ 'get more' | uppercase }}
     <span class="ml-2">
-      <fa-icon [icon]="faAngleDown" />
+      <fa-icon [icon]="faAngleDown"/>
     </span>
   </p>
 </div>
+
+<ng-template #notInRange>
+  <div class="py-2.5 text-white text-opacity-50">
+    <p *ngIf="posts && posts?.length === 0; else noMorePosts"
+       class="text-sm text-center italic">no post yet</p>
+  </div>
+
+  <ng-template #noMorePosts>
+    <p class="text-sm text-center italic">no more posts</p>
+  </ng-template>
+</ng-template>

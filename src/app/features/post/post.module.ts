@@ -23,7 +23,8 @@ import { ReactiveFormsModule } from "@angular/forms";
   ],
   exports: [
     UserPostsComponent,
-    AddPostFormComponent
+    AddPostFormComponent,
+    GetMorePostsComponent
   ],
   imports: [
     CommonModule,

@@ -56,4 +56,8 @@ export class PrivateProfileComponent implements OnInit {
   onClick = async (): Promise<void> => {
     await this._router.navigateByUrl("user/profile/edit");
   }
+
+  addMorePosts = ($event: PostsResponseModel[]): void => {
+    $event.forEach((item: PostsResponseModel) => this.posts.push(item));
+  }
 }

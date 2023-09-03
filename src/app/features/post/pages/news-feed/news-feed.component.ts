@@ -20,9 +20,12 @@ export class NewsFeedComponent implements OnInit {
   getAllPost = (offset: number, isDeleted: boolean = false): void => {
     this._postService.getAllPost(offset, isDeleted).subscribe({
       next: (response: ApiResponseModel<PostsResponseModel[]>) => {
-        console.log(response.data)
         return this.posts = response.data;
       }
     })
+  }
+
+  addMorePosts = ($event: PostsResponseModel[]): void => {
+    $event.forEach((item: PostsResponseModel) => this.posts.push(item));
   }
 }

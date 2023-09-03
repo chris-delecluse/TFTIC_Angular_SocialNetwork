@@ -7,5 +7,6 @@
 </app-user-profile-data>
 <app-add-post-form/>
 <app-user-posts [posts]="posts"/>
-
+<app-get-more-posts [posts]="posts" [userId]="userData.id"
+                    (emitNewPostsOnClick$)="addMorePosts($event)"/>
 <!--https://www.zealousweb.com/wp-content/uploads/2021/05/Featured-%E2%80%93-6.jpg-->

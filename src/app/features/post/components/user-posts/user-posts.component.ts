@@ -9,4 +9,9 @@ import { PostsResponseModel } from "../../../../core/models/post/Posts-response.
 export class UserPostsComponent {
   @Input()
   posts!: PostsResponseModel[];
+
+  trackPosts = (index: number, model: PostsResponseModel) => {
+    //console.log('track by post', model);
+    return model.post.id;
+  }
 }

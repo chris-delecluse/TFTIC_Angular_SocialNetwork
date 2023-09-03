@@ -52,6 +52,10 @@ export class PublicProfileComponent implements OnInit {
     })
   }
 
+  addMorePosts = ($event: PostsResponseModel[]): void => {
+    $event.forEach((item: PostsResponseModel) => this.posts.push(item));
+  }
+
   updateUserProfile = ($event: string): void => {
     this.userData.friendRequestStatus = $event;
   }
