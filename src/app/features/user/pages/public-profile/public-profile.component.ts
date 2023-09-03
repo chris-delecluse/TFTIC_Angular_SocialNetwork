@@ -4,6 +4,8 @@ import { ActivatedRoute } from "@angular/router";
 import { ApiResponseModel } from "../../../../core/models/Api-response.model";
 import { FullPublicProfileModel } from "../../../../core/models/user/Full-public-profile.model";
 import { FriendStatus } from "../../../../core/enums/friend-status";
+import { PostsResponseModel } from "../../../../core/models/post/Posts-response.model";
+import { PostService } from "../../../../core/services/post.service";
 
 @Component({
   selector: 'app-public-profile',
@@ -19,8 +21,11 @@ export class PublicProfileComponent implements OnInit {
     lastName: ''
   };
 
+  posts!: PostsResponseModel[];
+
   constructor(
     private readonly _userService: UserService,
+    private readonly _postService: PostService,
     private readonly _router: ActivatedRoute
   ) {}
 
@@ -30,8 +35,19 @@ export class PublicProfileComponent implements OnInit {
 
   getFullPublicProfile = (): void => {
     this._userService.getFullPublicProfileById(this._router.snapshot.params['id']).subscribe({
-      next: (response: ApiResponseModel<FullPublicProfileModel>) => {
-        return this.userData = response.data;
+      next: (response: ApiResponseModel<FullPublicProfileModel>): void => {
+        if (response.statusCode === 200) {
+          this.userData = response.data;
+          this.getPosts(response.data.id)
+        }
+      }
+    })
+  }
+
+  getPosts = (userId: number): void => {
+    this._postService.getAllPostByUserId(userId, 0, false).subscribe({
+      next: (response: ApiResponseModel<PostsResponseModel[]>): void => {
+        this.posts = response.data;
       }
     })
   }

@@ -17,6 +17,10 @@ export class HttpPostService {
     return this._httpClient.get<ApiResponseModel<PostsResponseModel[]>>(`${environment.apiUrl}/post?offset=${offset}&isDeleted=${isDeleted}`)
   }
 
+  getAllPostByUserId = (userId: number, offset: number, isDeleted: boolean): Observable<ApiResponseModel<PostsResponseModel[]>> => {
+    return this._httpClient.get<ApiResponseModel<PostsResponseModel[]>>(`${environment.apiUrl}/post/user/${userId}?offset=${offset}&isDeleted=${isDeleted}`);
+  }
+
   addPost = (form: PostFormModel): Observable<ApiResponseModel<string>> => {
     return this._httpClient.post<ApiResponseModel<string>>(`${environment.apiUrl}/post`, form);
   }

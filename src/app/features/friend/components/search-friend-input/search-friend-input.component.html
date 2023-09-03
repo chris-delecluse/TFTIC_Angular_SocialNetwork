@@ -1,7 +1,7 @@
-<div class="relative py-1.5 px-1.5 md:pt-0">
+<div class="relative pb-2 pr-2 md:pt-0 border-b-10 border-primary">
   <form [formGroup]="searchForm"
-        class="flex gap-2 items-center">
-    <fa-icon [icon]="faSearch" class="absolute top-4.5 left-6 text-white text-opacity-50  md:top-2.75"/>
+        class="flex gap-2 items-center pt-2.5 pb-0.5">
+    <app-absolut-icon [icon]="faSearch" top="top-4.5" left="left-6" color="text-white text-opacity-50"/>
     <input type="text" placeholder="Search" class="border-none" formControlName="searchUser">
     <app-main-button text="search" (click)="onSubmit()"/>
   </form>

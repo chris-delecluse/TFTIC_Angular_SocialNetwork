@@ -4,6 +4,8 @@ import { LoginFormModel } from "../../../../core/models/auth/Login-form.model";
 import { TokenService } from "../../../../core/services/token.service";
 import { Router } from "@angular/router";
 import { RedirectEventService } from "../../../../core/services/redirect-event.service";
+import { ApiResponseModel } from "../../../../core/models/Api-response.model";
+import { LoginResponseModel } from "../../../../core/models/auth/Login-response.model";
 
 @Component({
   selector: 'app-login',
@@ -22,7 +24,7 @@ export class LoginComponent implements OnDestroy {
 
   public login = (form: LoginFormModel): void => {
     this._authService.login(form).subscribe({
-      next: (response) => {
+      next: (response: ApiResponseModel<LoginResponseModel>) => {
         this._tokenService.storeToken(response.data.token);
         this._authService.setIsConnected(true);
       },

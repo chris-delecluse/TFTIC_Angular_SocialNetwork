@@ -13,6 +13,7 @@ import { EditProfileComponent } from './pages/edit-profile/edit-profile.componen
 import { EditProfileFormComponent } from './components/edit-profile-form/edit-profile-form.component';
 import { FriendModule } from "../friend/friend.module";
 import { ReactiveFormsModule } from "@angular/forms";
+import { PostModule } from "../post/post.module";
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ReactiveFormsModule } from "@angular/forms";
         FontAwesomeModule,
         SharedModule,
         FriendModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        PostModule
     ]
 })
 export class UserModule { }

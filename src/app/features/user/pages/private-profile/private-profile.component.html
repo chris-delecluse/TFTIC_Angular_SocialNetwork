@@ -2,9 +2,10 @@
 <app-backdrop-and-profile-picture [profilePicture]="userData.profilePicture" [backdropImage]="userData.backdropImage"/>
 <app-user-profile-data [userData]="userData">
   <div class="flex gap-2 justify-end">
-    <app-main-button [icon]="faEdit" text="edit" (click)="onClick()" />
+    <app-main-button [icon]="faEdit" text="edit" (click)="onClick()"/>
   </div>
 </app-user-profile-data>
-
+<app-add-post-form/>
+<app-user-posts [posts]="posts"/>
 
 <!--https://www.zealousweb.com/wp-content/uploads/2021/05/Featured-%E2%80%93-6.jpg-->

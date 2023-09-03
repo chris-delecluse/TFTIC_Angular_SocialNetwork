@@ -11,8 +11,12 @@ import { PostFormModel } from "../models/post/Post-form.model";
 export class PostService {
   constructor(private _httpPostService: HttpPostService) { }
 
-  getAllPost = (offset: number, isDeleted: boolean): Observable<ApiResponseModel<PostsResponseModel[]>>  => {
+  getAllPost = (offset: number, isDeleted: boolean): Observable<ApiResponseModel<PostsResponseModel[]>> => {
     return this._httpPostService.getAllPost(offset, isDeleted)
+  }
+
+  getAllPostByUserId = (userId: number, offset: number, isDeleted: boolean): Observable<ApiResponseModel<PostsResponseModel[]>> => {
+    return this._httpPostService.getAllPostByUserId(userId, offset, isDeleted);
   }
 
   addPost = (form: PostFormModel): Observable<ApiResponseModel<string>> => {

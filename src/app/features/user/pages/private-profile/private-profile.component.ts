@@ -4,6 +4,8 @@ import { FullPrivateProfileModel } from "../../../../core/models/user/Full-priva
 import { UserService } from "../../../../core/services/user.service";
 import { ApiResponseModel } from "../../../../core/models/Api-response.model";
 import { Router } from "@angular/router";
+import { PostService } from "../../../../core/services/post.service";
+import { PostsResponseModel } from "../../../../core/models/post/Posts-response.model";
 
 @Component({
   selector: 'app-private-profile',
@@ -20,8 +22,11 @@ export class PrivateProfileComponent implements OnInit {
     lastName: ''
   };
 
+  posts!: PostsResponseModel[];
+
   constructor(
     private _userService: UserService,
+    private _postService: PostService,
     private _router: Router
   ) {}
 
@@ -31,7 +36,20 @@ export class PrivateProfileComponent implements OnInit {
 
   getFullProfile = (): void => {
     this._userService.getFullProfile().subscribe({
-      next: (response: ApiResponseModel<FullPrivateProfileModel>) => this.userData = response.data
+      next: (response: ApiResponseModel<FullPrivateProfileModel>) => {
+        if (response.isSuccess) {
+          this.userData = response.data;
+          this.getPosts(response.data.id)
+        }
+      }
+    })
+  }
+
+  getPosts = (userId: number): void => {
+    this._postService.getAllPostByUserId(userId, 0, false).subscribe({
+      next: (response: ApiResponseModel<PostsResponseModel[]>): void => {
+        this.posts = response.data;
+      }
     })
   }
 
