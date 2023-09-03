@@ -11,15 +11,15 @@
     <input type="text" placeholder="Search" class="border-none">
   </div>
 
-  <nav class="row-start-2 col-span-full h-full
+  <nav class="row-start-2 col-span-full h-full text-white text-opacity-50
               sm:row-start-1 sm:col-start-2 sm:col-end-2">
 
     <ul class="flex justify-around h-full items-center bg-primary bg-opacity-50 rounded-lg">
       <li *ngFor="let item of nav"
           class="w-full h-full active:translate-y-0.5">
 
-        <a [routerLink]="item.navigateTo" routerLinkActive="bg-white bg-opacity-10"
-           class="w-full h-full text-white text-opacity-50 flex items-center justify-center transition-all ease-in-out duration-500 rounded-lg
+        <a [routerLink]="item.navigateTo" routerLinkActive="bg-white bg-opacity-10 text-special-blue"
+           class="w-full h-full flex items-center justify-center transition-all ease-in-out duration-500 rounded-lg
                   hover:bg-white hover:bg-opacity-50 hover:text-white hover:rounded-lg">
 
           <fa-icon [icon]="item.icon" class="text-xl"/>

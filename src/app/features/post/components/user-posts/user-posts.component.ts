@@ -11,7 +11,6 @@ export class UserPostsComponent {
   posts!: PostsResponseModel[];
 
   trackPosts = (index: number, model: PostsResponseModel) => {
-    //console.log('track by post', model);
     return model.post.id;
   }
 }
