@@ -1,9 +1,12 @@
 <app-page-title title="feeds"/>
-<app-mobile-title title="feeds" />
+
+<app-add-post-form/>
 
 <ng-container *ngFor="let item of posts">
-  <app-post [post]="item.post" [comment]="item.comments" />
+  <app-post [post]="item.post" [comment]="item.comments"/>
 </ng-container>
+
+<app-get-more-posts/>
 
 <!--<app-toaster-message message="You are connected" [timer]="[1000,2000]" />-->
 

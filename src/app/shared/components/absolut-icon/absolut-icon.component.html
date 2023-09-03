@@ -1,4 +1,4 @@
 <fa-icon [icon]="icon"
-         [ngClass]="[top ?? '', left ?? '', right ?? '', bottom ?? '']"
-         class="absolute text-white text-opacity-60 text-lg"/>
+         [ngClass]="top + ' ' + left + ' ' + right + ' ' + bottom + ' ' + (color ?? 'text-white text-opacity-60')"
+         class="absolute text-lg" />
 <ng-content/>

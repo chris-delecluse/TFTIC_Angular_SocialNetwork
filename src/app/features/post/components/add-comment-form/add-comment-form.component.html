@@ -1,0 +1,11 @@
+<form [formGroup]="form" class="flex">
+
+  <app-absolut-icon [icon]="faComment" top="top-2.5" left="left-3.5" class="relative"/>
+
+  <input type="text" placeholder="Put your comment here" formControlName="comment"
+         class="border-none pr-4 mr-2.5
+                placeholder:italic placeholder:text-sm" />
+
+  <app-main-button text="comment" (click)="onClick()"/>
+</form>
+

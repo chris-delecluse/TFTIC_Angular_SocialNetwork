@@ -1,1 +1,10 @@
-<p>add-post-form works!</p>
+<form [formGroup]="postForm"
+      class="flex sticky top-0 z-10 gap-2 border-b-10 border-primary bg-z-color py-2.5 pl-0.5 pr-2.5 items-center justify-center
+            md:top-7.5">
+
+  <app-absolut-icon [icon]="faMessage" top="top-5" left="left-6" color="text-special-blue"/>
+  <input type="text" placeholder="add a new post" formControlName="postContent"
+         class="border-none placeholder:italic text-sm placeholder:text-special-blue">
+
+  <app-main-button text="add" (click)="onSubmit()"/>
+</form>

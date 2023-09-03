@@ -11,6 +11,9 @@ export class AbsolutIconComponent {
   icon!: IconDefinition;
 
   @Input()
+  color?: string;
+
+  @Input()
   top ?: string;
 
   @Input()

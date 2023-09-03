@@ -5,28 +5,35 @@ import { LoginResponseModel } from "../models/auth/Login-response.model";
 import { Observable } from "rxjs";
 import { ApiResponseModel } from "../models/Api-response.model";
 import { RegisterFormModel } from "../models/auth/Register-form.model";
+import { TokenService } from "./token.service";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class AuthService {
-    private _isConnected: boolean = false;
+  private _isConnected: boolean = false;
 
-    constructor(private _httpAuthService: HttpAuthService) { }
+  constructor(
+    private _httpAuthService: HttpAuthService,
+    private _tokenService: TokenService
+  ) { }
 
-    login = (form: LoginFormModel): Observable<ApiResponseModel<LoginResponseModel>> => {
-        return this._httpAuthService.postLogin(form);
-    }
+  login = (form: LoginFormModel): Observable<ApiResponseModel<LoginResponseModel>> => {
+    return this._httpAuthService.postLogin(form);
+  }
 
-    register = (form: RegisterFormModel): Observable<ApiResponseModel<string>> => {
-        return this._httpAuthService.postRegister(form);
-    }
+  register = (form: RegisterFormModel): Observable<ApiResponseModel<string>> => {
+    return this._httpAuthService.postRegister(form);
+  }
 
-    isConnected = (): boolean => {
-        return this._isConnected;
-    }
+  isConnected = (): boolean => {
+    if (this._tokenService.getToken())
+      this._isConnected = true;
 
-    setIsConnected(status: boolean): void {
-        this._isConnected = status;
-    }
+    return this._isConnected;
+  }
+
+  setIsConnected(status: boolean): void {
+    this._isConnected = status;
+  }
 }

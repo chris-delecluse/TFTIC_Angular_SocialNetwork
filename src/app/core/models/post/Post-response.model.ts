@@ -7,5 +7,6 @@ export interface PostResponseModel {
   profilePicture?: string;
   commentCount: number;
   likeCount: number;
+  userHasLiked: boolean;
   createdAt: Date;
 }
