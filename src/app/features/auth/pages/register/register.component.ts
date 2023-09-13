@@ -16,7 +16,7 @@ export class RegisterComponent {
     private _router: Router
   ) {}
 
-  register = (form: RegisterFormModel) => {
+  register = (form: RegisterFormModel): void => {
     this._authService.register(form).subscribe({
       error: (response) => {
         this.errors = [];

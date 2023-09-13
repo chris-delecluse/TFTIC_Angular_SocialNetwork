@@ -1,0 +1,26 @@
+<div class="flex w-full mt-2 space-x-3 max-w-xs ml-auto justify-end sm:max-w-sm md:max-w-md xl:max-w-xl"
+     *ngIf="message.from.id === currentUserId; else other">
+  <div>
+    <div class="bg-special-blue text-white p-3 rounded-l-lg rounded-br-lg">
+      <p class="text-sm text-right">
+        {{ message.content }}
+      </p>
+    </div>
+    <span class="block pt-2 text-end text-xs text-gray-500 leading-none">{{ message.createdAt | dateAgo }}</span>
+  </div>
+  <app-profile-picture [src]="message.from.profilePicture" cStyles="w-10 h-10"/>
+</div>
+
+<ng-template #other>
+  <div class="flex w-full mt-2 space-x-3 max-w-xs sm:max-w-sm md:max-w-md xl:max-w-xl">
+    <app-profile-picture [src]="message.from.profilePicture" cStyles="w-10 h-10"/>
+    <div>
+      <div class="bg-secondary p-3 rounded-r-lg rounded-bl-lg">
+        <p class="text-sm text-white">
+          {{ message.content }}
+        </p>
+      </div>
+      <span class="text-xs text-gray-500 leading-none">{{ message.createdAt | dateAgo }}</span>
+    </div>
+  </div>
+</ng-template>

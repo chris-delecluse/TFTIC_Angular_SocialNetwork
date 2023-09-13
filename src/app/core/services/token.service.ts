@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpTokenService } from "../http/http-token.service";
+import { UserDataModel } from "../models/auth/User-data.model";
+import jwtDecode from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +20,19 @@ export class TokenService {
 
   removeToken = (): void => {
     localStorage.removeItem("access-token");
+  }
+
+  extractUserFromToken = (): UserDataModel | void => {
+    const token: string | null = this.getToken();
+
+    if (token) {
+      const decoded: UserDataModel = jwtDecode(token);
+
+      return {
+        Id: parseInt(decoded.Id.toString()),
+        given_name: decoded.given_name,
+        family_name: decoded.family_name
+      };
+    }
   }
 }

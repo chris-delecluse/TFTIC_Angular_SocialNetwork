@@ -1,0 +1,15 @@
+<div class="w-full h-full flex flex-col justify-between">
+  <app-page-title
+    title="chat with {{ messages && messages[0] ? messages[0].to.firstName : '' }} {{ messages && messages[0] ? messages[0].to.lastName : '' }}"/>
+
+  <div class="p-2.5 flex-1 overflow-y-auto scrollbar-hide" #msgContainer>
+    <app-display-message *ngFor="let message of messages; let i=index; trackBy: trackNewMessage"
+                         [message]="message"
+                         [currentUserId]="fromId"/>
+  </div>
+
+  <app-send-message-form [currentUserId]="fromId"
+                         [messageTo]="toId"
+                         ($emitSendMessageOnClick)="onMessageSend($event)"/>
+</div>
+

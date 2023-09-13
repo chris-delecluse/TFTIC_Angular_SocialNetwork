@@ -1,1 +1,8 @@
-<p>send-message-form works!</p>
+<form [formGroup]="form" class="flex gap-2 pr-2 py-2 sticky bottom-0 border-t-10 border-t-primary">
+  <app-absolut-icon [icon]="faMessage" top="top-2.5" left="left-6" color="text-special-blue" class="relative"/>
+  <input class="border-none placeholder:italic placeholder:text-sm placeholder:text-special-blue"
+         type="text" placeholder="write message here..."
+         formControlName="message">
+
+  <app-main-button text="send" [icon]="faPaperPlane" (click)="onSubmit()"/>
+</form>

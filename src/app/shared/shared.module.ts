@@ -10,6 +10,7 @@ import { MobileTitleComponent } from './components/mobile-title/mobile-title.com
 import { AgePipe } from './pipes/age.pipe';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 import { TruncateContentDirective } from './directives/truncate-content.directive';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TruncateContentDirective } from './directives/truncate-content.directiv
     ProfilePictureComponent,
     TruncateContentDirective,
     TruncateContentDirective,
+    DateAgoPipe,
   ],
   exports: [
     FormErrorComponent,
@@ -32,6 +34,7 @@ import { TruncateContentDirective } from './directives/truncate-content.directiv
     AgePipe,
     ProfilePictureComponent,
     TruncateContentDirective,
+    DateAgoPipe,
   ],
   imports: [
     CommonModule,
