@@ -65,24 +65,24 @@ export class PersonalMessageComponent implements OnInit, AfterViewChecked {
   }
 
   convertAndPushNewMessage = (message: string): void => {
-    const newMessage = JSON.parse(message);
+    const parsed = JSON.parse(message);
 
     this.messages.push({
-      id: newMessage.Id,
+      id: parsed.Id,
       from: {
-        id: newMessage.To.Id,
-        firstName: newMessage.To.FirstName,
-        lastName: newMessage.To.LastName,
-        profilePicture: newMessage.To.ProfilePicture
+        id: parsed.From.Id,
+        firstName: parsed.From.FirstName,
+        lastName: parsed.From.LastName,
+        profilePicture: parsed.From.ProfilePicture
       },
       to: {
-        id: newMessage.From.Id,
-        firstName: newMessage.From.FirstName,
-        lastName: newMessage.From.LastName,
-        profilePicture: newMessage.From.ProfilePicture
+        id: parsed.To.Id,
+        firstName: parsed.To.FirstName,
+        lastName: parsed.To.LastName,
+        profilePicture: parsed.To.ProfilePicture
       },
-      content: newMessage.Content,
-      createdAt: newMessage.CreatedAt
+      content: parsed.Content,
+      createdAt: parsed.CreatedAt
     });
   }
 }

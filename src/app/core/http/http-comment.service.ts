@@ -13,7 +13,6 @@ export class HttpCommentService {
   constructor(private _httpClient: HttpClient) { }
 
   postComment = (postId: number, form: CommentFormModel): Observable<ApiResponseModel<string>> => {
-    console.log(form)
     return this._httpClient.post<ApiResponseModel<string>>(`${environment.apiUrl}/post/${postId}/comment`, form);
   }
 }
